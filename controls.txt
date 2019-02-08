@@ -1,0 +1,36 @@
+# coding: utf-8
+# Your code here!
+from time import sleep
+import os
+def clear():
+    os.system('clear')
+# Hello World program in Python
+
+import curses
+screen = curses.initscr()
+curses.noecho()
+screen.keypad(True)
+x = None
+try:
+    while True:
+        char = screen.getch()
+        if char == ord('q'):
+            break
+        elif char == ord('x'):
+            print ('x')
+        elif char == curses.KEY_UP:
+         #   sleep(1)
+           # clear()
+            print ("UP\r")
+        elif char == curses.KEY_DOWN:
+            print ("DOWN\r")
+        elif char == curses.KEY_RIGHT:
+            print ("RIGHT\r")
+        elif char == curses.KEY_LEFT:
+            print ("LEFT\r")
+finally:
+    print ("done")
+    screen.keypad(0)
+    curses.echo()
+    curses.endwin()
+    clear()
